@@ -86,6 +86,6 @@ $('.nav-logout').on('click',function(event){
 });
 var option_number = 3;
 $('#addButton').on('click',function(){
-	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' value='Option"+ option_number +"'><br><br>");
+	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' placeholder='Option"+ option_number +"'><br><br>");
 	option_number++;
 });
