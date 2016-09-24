@@ -2,7 +2,6 @@
  * Created by et-asus on 24/09/16. and modified by Randy
  */
 var ref = new Firebase("https://vsw.firebaseio.com");
-
 $(function(){
 	$('.nav-login').on('click', function(){
 	   $('.login-popup ').show();
@@ -17,8 +16,6 @@ $(function(){
 	   $('.register-popup ').hide();
 	   $('.wrapper').removeClass('cover');
 	});
-});
-$('.test').on('click',function(event){
 });
 $('.register-btn').on('click',function(event){
 	if($('#register-name-input').val()==""){
@@ -86,4 +83,9 @@ $('.nav-logout').on('click',function(event){
 	}, function(error) {
 	// An error happened.
 	});
+});
+var option_number = 3;
+$('#addButton').on('click',function(){
+	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' placeholder='Option"+ option_number +"'><br><br>");
+	option_number++;
 });

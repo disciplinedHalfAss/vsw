@@ -7,11 +7,8 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
 
-	<script lang="javascript">
-
-	</script>
 </head>
 <body>
 	<div class="wrapper">
@@ -52,18 +49,63 @@
 			</script>
 
 			<div class="generated-link" id="option1">
-				<a href="" style="margin-right:30px">Generated link</a><input type="button" value="Copy the link" id="Copy">
+				
+				<input type="text" id="generated-link" value="http://baidu.com">
+				<input type="button" value="Copy the link" id="copy-btn" style="margin-left:30px"><span id="copy-answer" style="margin-left:20px"></span>
+			
 			</div>
 			
 			<div id="linebreaker1"><br><br><br></div>
 			
-			<input type="checkbox" name="option2" value="option2">Send invitation email>
+			<input type="checkbox" name="option2" value="option2" id="checkbox2">Send invitation email
 			<br><br>
 
+			<script type="text/javascript">
+				document.getElementById("checkbox2").onclick = function() {
+					var isChecked = document.getElementById("checkbox2").checked;
+					if (isChecked) {
+						document.getElementById("option2").style.visibility="visible"
+						
+					} else {
+						document.getElementById("option2").style.visibility="hidden"
+					}
+				}
+			</script>
+
+			<div class="email-box" id="option2">
+					<span>Type the e-mail addresses here:</span><br><br>
+					<textarea class="emails"></textarea>
+			</div>
+
+			<br><br>
+			<input type="button" value="Back" id="backBtn" style="margin-right:250px">
+			<input type="button" value="Publish" id="publishBtn" style="background-color:#00cc00">
 
 
+			<script type="text/javascript">
+					// setup the varriables
+					var generatedLink = document.getElementById("generated-link");
+					var answer = document.getElementById("copy-answer");
+					var copyBtn   = document.getElementById("copy-btn");
+					copyBtn.addEventListener('click', function(e) {
 
+  						// Select some text (you could also create a range)
+   						generatedLink.select(); 
 
+   						// Use try & catch for unsupported browser
+   					try {
+
+       					// The important part (copy selected text)
+       					var successful = document.execCommand('copy');
+
+       					if(successful) answer.innerHTML = 'Copied!';
+       					else answer.innerHTML = 'Unable to copy!';
+   					} catch (err) {
+       						answer.innerHTML = 'Unsupported Browser!';
+   						}
+					});
+			</script>
+		</div>
 	</div>
 </body>
 </html>
