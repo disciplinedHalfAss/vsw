@@ -1,4 +1,8 @@
 /* Index CSS*/
+.cover {
+    filter: opacity(50%);
+}
+
 .wrapper {
     width: 100%;
     margin: auto;
@@ -60,10 +64,24 @@
 
 /* Login Pop up */
 .login-popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
     width: 50%;
-    margin: auto;
+    transform: translate(-50%, -50%);
     padding: 10px;
     background-color: #D78387;
+    z-index: 20;
+}
+
+.login-popup header {
+    text-align: center;
+}
+
+.close-popup {
+    float: right;
+    cursor: pointer;
 }
 
 .login div {
@@ -74,9 +92,14 @@
     float: right;
 }
 
+#login-btn {
+    width: 90%;
+    margin: auto;
+}
+
 .login-btn {
     margin-top: 10px;
-    width: 90%;
+    width: 100%;
 }
 /* End Login Pop up */
 
