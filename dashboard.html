@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+   <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script>
       // Initialize Firebase
       var config = {
@@ -22,8 +26,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="dash-wrap">
+<body ng-app='startBet'>
+    <div class="dash-wrap" ng-controller='ibet'>
         <div class="top-container">
             <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
             <nav class="top-nav">
@@ -40,10 +44,10 @@
         </div>
         <!--End Top Container-->
 
-        <div class="bot-container">
+        <div class="bot-container" >
             <div class="in-play">
                 <header><p>In-Play Bets</p></header>
-                <div class="bets-list">
+                <div class="bets-list" ng-repeat="pp in ibet">
                     <div class="bet-title">
                         <p>lkasdjflkjasl;djfs;akldjflkjsadf</p>
                     </div>
@@ -51,14 +55,7 @@
                         <button class="go-betting-btn">Go Betting</button>
                     </div>
                 </div>
-                <div class="bets-list">
-                    <div class="bet-title">
-                        <p>lkasdjflkjasl;djfs;akldjflkjsadf</p>
-                    </div>
-                    <div class="bet-action">
-                        <button class="participated-btn">Participated</button>
-                    </div>
-                </div>
+                
             </div>
             <!--end in-play div-->
 
@@ -96,5 +93,6 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/global.js"></script>
+    <script src="js/bet.js"></script>
 </body>
 </html>
