@@ -270,7 +270,7 @@ h1 span#sharing {
     color: #808080;  /*grey*/
 }
 
-input[type=text] {
+input {
     width: 600px;
     height: 20px;
     padding: 10px 20px;
@@ -379,4 +379,6 @@ h1 span#sharing {
     font-weight: normal;
 }
 /* End Dashboard CSS*/
-
+.red-border{
+    border:2px solid red;
+}
