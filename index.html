@@ -13,7 +13,7 @@
         <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
         <nav class="top-nav">
             <ul>
-                <li><a href="#">Sing up</a></li>
+                <li><a href="#" class="nav-signUp">Sign up</a></li>
                 <li><a href="#" class="nav-login">Log In</a></li>
             </ul>
         </nav>
@@ -35,22 +35,51 @@
         <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
     </div>
 </div>
-    <div class="login-popup">
-        <header>Login<span class="close-popup">X</span></header>
-        <div class="login">
-            <form action="">
-                <div>
-                    <label for="username-input" class="username-label">Username: </label>
-                    <input type="text" name="username" class="username-input" id="username-input">
-                </div>
-                <div>
-                    <label for="password-input" class="password-label">Password: </label>
-                    <input type="password" name="username" class="password-input" id="password-input">
-                </div>
-                <div id="login-btn">
-                    <button class="login-btn">Log In</button>
-                </div>
-            </form>
+    <div class="login-reg-popup">
+        <div class="login-reg-tab">
+            <div class="login-tab">
+                Login
+            </div>
+            <div class="signUp-tab">
+                Sign up
+            </div>
+            <div class="close-popup">X</div>
+        </div>
+        <div class="login-reg-contents">
+            <div class="login-content">
+                <form action="">
+                    <div>
+                        <label for="username-input" class="username-label">Username: </label>
+                        <input type="text" name="username" class="username-input" id="username-input">
+                    </div>
+                    <div>
+                        <label for="password-input" class="password-label">Password: </label>
+                        <input type="password" name="username" class="password-input" id="password-input">
+                    </div>
+                    <div id="login-btn">
+                        <button class="login-btn">Log In</button>
+                    </div>
+                </form>
+            </div>
+            <div class="reg-content">
+                <form action="">
+                    <div>
+                        <label for="reg-username-input" class="reg-username-label">Username: </label>
+                        <input type="text" name="reg-username" class="reg-username-input" id="reg-username-input">
+                    </div>
+                    <div>
+                        <label for="reg-password-input" class="reg-password-label">Password: </label>
+                        <input type="reg-password" name="username" class="reg-password-input" id="reg-password-input">
+                    </div>
+                    <div>
+                        <label for="reg-password-input" class="reg-password-label">Confirm Password: </label>
+                        <input type="reg-password" name="username" class="reg-confirmPass-input" id="reg-confirmPass-input">
+                    </div>
+                    <div id="reg-btn">
+                        <button class="reg-btn">Register</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
