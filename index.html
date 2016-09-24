@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Bet</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="wrapper">
 
-        <div class="top-bar">
+        <div class="top-container">
             <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
             <nav class="top-nav">
                 <ul>
@@ -33,6 +33,25 @@
 
         <div class="container">
             <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
+        </div>
+
+        <div class="login-popup">
+            <header>Login</header>
+            <div class="login">
+                <form action="">
+                    <div>
+                        <label for="username-input" class="username-label">Username: </label>
+                        <input type="text" name="username" class="username-input" id="username-input">
+                    </div>
+                    <div>
+                        <label for="password-input" class="password-label">Password: </label>
+                        <input type="password" name="username" class="password-input" id="password-input">
+                    </div>
+                    <div id="login-btn">
+                        <button class="login-btn">Log In</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
