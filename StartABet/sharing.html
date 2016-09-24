@@ -9,6 +9,9 @@
 
 	<script type="text/javascript" src="jquery.min.js"></script>
 
+	<script lang="javascript">
+
+	</script>
 </head>
 <body>
 	<div class="wrapper">
@@ -28,17 +31,36 @@
 				<span class="content-text" id="sharing" style="color:#00cc00">2. Sharing</span>
 			</h1>	
 
-			<br><br>
-			<h2 class="content-text">Sharing settings</h2>
+			<br>
+			<h2 style="font-weight:normal">Sharing settings</h2>
 			
 			<div class="content-text">How to invite your friends?</div>
 			<br>
-			<input type="checkbox" name="participants" value="participant1">Generate a sharable link<br><br>
+			<input type="checkbox" name="option1" value="option1" id="checkbox1">Generate a sharable link<br><br>
+			
+			<script type="text/javascript">
+				document.getElementById("checkbox1").onclick = function() {
+					var isChecked = document.getElementById("checkbox1").checked;
+					if (isChecked) {
+						document.getElementById("option1").style.visibility="visible"
+						document.getElementById("linebreaker1").style.visibility="visible"
+					} else {
+						document.getElementById("option1").style.visibility="hidden"
+						document.getElementById("linebreaker1").style.visibility="hidden"
+					}
+				}
+			</script>
 
-			<a href="">Generated link</a><input type="button" value="Copy the link" id="Copy" style="float:right">
-
-			<input type="checkbox" name="participants" value="participant2">Send invitation email>
+			<div class="generated-link" id="option1">
+				<a href="" style="margin-right:30px">Generated link</a><input type="button" value="Copy the link" id="Copy">
+			</div>
+			
+			<div id="linebreaker1"><br><br><br></div>
+			
+			<input type="checkbox" name="option2" value="option2">Send invitation email>
 			<br><br>
+
+
 
 
 

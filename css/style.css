@@ -340,10 +340,6 @@ input[type=date] {
     padding-left: 60px
 }
 
-h1 span {
-    font-size: 20px
-}
-
 h1 span#draft {
     padding-left: 50px;
     padding-right: 10px;
@@ -378,7 +374,17 @@ h1 span#sharing {
 .notbold{
     font-weight: normal;
 }
+
 /* End Dashboard CSS*/
+
 .red-border{
     border:2px solid red;
 }
+
+/* Start of Sharing CSS*/
+.generated-link {
+    float: left;
+    visibility: hidden;
+}
+/* End of Sharing CSS*/
+
