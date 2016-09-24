@@ -4,20 +4,19 @@
 var ref = new Firebase("https://vsw.firebaseio.com");
 
 $(function(){
-   $('.nav-login').on('click', function(){
-       $('.login-popup ').show();
-       $('.wrapper').addClass('cover');
-   });
-   $('.nav-register').on('click', function(){
-       $('.register-popup ').show();
-       $('.wrapper').addClass('cover');
-   });
-
-   $('.close-popup').on('click', function(){
-       $('.login-popup ').hide();
-       $('.register-popup ').hide();
-       $('.wrapper').removeClass('cover');
-   });
+	$('.nav-login').on('click', function(){
+	   $('.login-popup ').show();
+	   $('.wrapper').addClass('cover');
+	});
+	$('.nav-register').on('click', function(){
+	   $('.register-popup ').show();
+	   $('.wrapper').addClass('cover');
+	});
+	$('.close-popup').on('click', function(){
+	   $('.login-popup ').hide();
+	   $('.register-popup ').hide();
+	   $('.wrapper').removeClass('cover');
+	});
 });
 $('.test').on('click',function(event){
 });
