@@ -461,55 +461,59 @@ h1 span#sharing {
     text-align: right;
 }
 
-.voteOptions .left-hr {
-    border: 3px solid red;
-}
-
-.option-col {
+.options {
     width: 100%;
-}
-
-.option-col div {
-    display: inline-block;
     margin: auto;
-    padding: 0;
+    background-color: #F6F6F6;
+    height: 100px;
+    border-bottom: 1px solid #5E5E5E;
 }
 
-.option-col div:first-child {
-    text-align: left;
-    width: 65%;
-    height: 80px;
-}
-
-.result-container .option-col:nth-child(even) {
+div.options div.opA {
     background-color: #65E570;
+    width: 60%;
 }
 
-.result-container .option-col:nth-child(odd) {
+div.options div.opB {
     background-color: #CBA9E4;
+    width: 30%;
 }
 
-.option-col div p {
-    margin: 0;
+.options p {
     position: relative;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-}
-
-.bet-btn {
-    width: 34%;
-    background-color: #fff;
-    height: 102px;
-    border-bottom: 1px solid #9D9CA0;
-}
-
-.bet-btn button {
-    position: relative;
+    text-align: left;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #E9C15C;
+    margin-left: 10px;
+}
+
+.options button {
+    float: right;
+}
+
+.options div:first-child {
+    height: 100%;
+    width: 65%;
+    float: left;
+}
+
+.bet-action {
+    padding-right: 10px;
+}
+
+.bet-action button {
+    cursor: pointer;
+    width: 150px;
     padding: 10px;
+    margin-top: 23px;
     border-radius: 5px;
 }
+
+.place-bet-btn {
+    background-color: #E9C15C;
+}
+
+
+
+
 /* End Result Page Css */
