@@ -270,7 +270,7 @@ h1 span#sharing {
     color: #808080;  /*grey*/
 }
 
-input {
+input text{
     width: 600px;
     height: 20px;
     padding: 10px 20px;
