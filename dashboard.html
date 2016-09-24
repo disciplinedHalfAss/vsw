@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCYXCul3nubv9nRJU4xG71uLXU6OpBY5vg",
+        authDomain: "vsw.firebaseapp.com",
+        databaseURL: "https://vsw.firebaseio.com",
+        storageBucket: "firebase-vsw.appspot.com",
+        messagingSenderId: "1028511849089"
+      };
+      firebase.initializeApp(config);
+    </script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +28,7 @@
             <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
             <nav class="top-nav">
                 <ul>
-                    <li><a href="#">Log Out</a></li>
+                    <a href="index.html"><li class="nav-logout">Log Out</li></a>
                 </ul>
             </nav>
 
@@ -78,5 +94,7 @@
         </div>
         <!--End Bot Container-->
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/global.js"></script>
 </body>
 </html>

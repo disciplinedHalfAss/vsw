@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Bet</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCYXCul3nubv9nRJU4xG71uLXU6OpBY5vg",
+        authDomain: "vsw.firebaseapp.com",
+        databaseURL: "https://vsw.firebaseio.com",
+        storageBucket: "firebase-vsw.appspot.com",
+        messagingSenderId: "1028511849089"
+      };
+      firebase.initializeApp(config);
+    </script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,7 +29,7 @@
         <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
         <nav class="top-nav">
             <ul>
-                <li><a href="#">Sing up</a></li>
+                <li><a href="#" class="nav-register">Sign up</a></li>
                 <li><a href="#" class="nav-login">Log In</a></li>
             </ul>
         </nav>
@@ -40,15 +56,37 @@
         <div class="login">
             <form action="">
                 <div>
-                    <label for="username-input" class="username-label">Username: </label>
-                    <input type="text" name="username" class="username-input" id="username-input">
+                    <label for="username-input" class="username-label">E-mail: </label>
+                    <input type="text" name="login-email" class="login-input" id="login-email-input">
                 </div>
                 <div>
                     <label for="password-input" class="password-label">Password: </label>
-                    <input type="password" name="username" class="password-input" id="password-input">
+                    <input type="password" name="login-password" class="login-input" id="login-password-input">
                 </div>
-                <div id="login-btn">
-                    <button class="login-btn">Log In</button>
+                <div>
+                    <div class="login-btn">Log In</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="register-popup">
+        <header>Register<span class="close-popup">X</span></header>
+        <div class="register">
+            <form action="">
+                <div>
+                    <label for="username-input" class="username-label">Full Name: </label>
+                    <input type="text" name="register-name" class="register-input" id="register-name-input">
+                </div>
+                <div>
+                    <label for="username-input" class="username-label">E-mail: </label>
+                    <input type="text" name="register-email" class="register-input" id="register-email-input">
+                </div>
+                <div>
+                    <label for="password-input" class="password-label">Password: </label>
+                    <input type="password" name="register-password" class="register-input" id="register-password-input">
+                </div>
+                <div>
+                    <div class="register-btn">Register</div>
                 </div>
             </form>
         </div>

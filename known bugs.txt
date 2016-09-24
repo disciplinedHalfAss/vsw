@@ -1,0 +1,1 @@
+1. registration only works on the second try
