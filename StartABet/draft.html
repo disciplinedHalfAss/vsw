@@ -3,11 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Start a Bet/Draft</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCYXCul3nubv9nRJU4xG71uLXU6OpBY5vg",
+        authDomain: "vsw.firebaseapp.com",
+        databaseURL: "https://vsw.firebaseio.com",
+        storageBucket: "firebase-vsw.appspot.com",
+        messagingSenderId: "1028511849089"
+      };
+      firebase.initializeApp(config);
+    </script>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-	<script type="text/javascript" src="jquery.min.js"></script>
 
 </head>
 <body>
@@ -39,9 +53,8 @@
 				<br><br>
 				<input type="text" id="Option2" value="Option 2">
 				<br><br>
-		
-				<input type="button" value="Add a option" id="addButton">
-			</div>		
+			</div>
+			<input type="button" value="Add an option" id="addButton">
 			<br><br><br>
 			<div class="content-text">
 				What stake are you betting on?
@@ -61,5 +74,7 @@
 			<input type="button" value="Invite Others to Play" id="inviteOthersToPlay" style="background-color:#00cc00">
 		</div>
 	</div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/global.js"></script>
 </body>
 </html>
