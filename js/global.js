@@ -67,3 +67,4 @@ $('.nav-logout').on('click',function(event){
 	// An error happened.
 	});
 });
+
