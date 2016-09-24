@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Start a Bet/Draft</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="top-container">
+        	<img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
+        	<nav class="top-nav">
+            	<ul>
+                	<li><a href="#">Log Out</a></li>
+            	</ul>
+        	</nav>
+    	</div>
+
+		<div class="main-content">
+			<h1>Start a Bet
+				<span class="content-text" id="draft">1. Draft</span>
+				<i class="fa fa-angle-right" style="font-size:20px"></i>
+				<span class="content-text" id="sharing">2. Sharing</span>
+			</h1>	
+
+			<input type="text" name="bet-questions" value="Questions?">
+			<br><br>
+			
+			<input type="text" name="bet-rules" value="Bet rules:" style="height:100px">
+			<br><br><br><br>
+
+			<div class="bet-options" id="bet-options">
+				<input type="text" id="Option1" value="Option 1">
+				<br><br>
+				<input type="text" id="Option2" value="Option 2">
+				<br><br>
+		
+				<input type="button" value="Add a option" id="addButton">
+			</div>		
+			<br><br><br>
+			<div class="content-text">
+				What stake are you betting on?
+			</div>
+
+			<br>
+			<input type="radio" name="stakes" value="Money $">Money $ <input type="textbox">
+			<br><br>
+			<input type="radio" name="stakes"><input type="textbox" value="Rewards"><input type="textbox" value="Punishments">
+			<br><br><br><br>
+			<div class="content-text">Bet time:</div><br>
+			<div class="bet-time"><span>Starts from:</span><input type="date" value="dd/mm/yy"><input type="time" value="00:00 AM"></div><br>
+			<div class="bet-time"><span>Ends at:</span><input type="date" value="dd/mm/yy"><input type="time" value="00:00 AM"></div><br>
+
+			<br>
+			<input type="button" value="Save as Draft" id="saveAsDraft" style="margin-right:320px">
+			<input type="button" value="Invite Others to Play" id="inviteOthersToPlay" style="background-color:#00cc00">
+		</div>
+	</div>
+</body>
+</html>
