@@ -336,3 +336,25 @@ input[type=date] {
 
 /* End Dashboard CSS*/
 
+.main-content {
+    padding-left: 60px
+}
+
+h1 span {
+    font-size: 20px
+}
+
+h1 span#draft {
+    padding-left: 50px;
+    padding-right: 10px;
+    color: #00cc00;  /*green*/
+}
+
+h1 span#sharing {
+    padding-left: 15px;
+}
+.notbold{
+    font-weight: normal;
+}
+/* End Dashboard CSS*/
+
