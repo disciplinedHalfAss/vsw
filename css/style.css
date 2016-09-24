@@ -388,3 +388,121 @@ h1 span#sharing {
 }
 /* End of Sharing CSS*/
 
+/* Result Page Css */
+.result-container {
+    width: 100%;
+    margin: auto;
+    background-color: #D7D7D7;
+    text-align: center;
+}
+
+.result-container p,
+.result-container h2 {
+    margin: 0;
+}
+
+.top-section,
+.mid-section,
+.bot-section {
+    width: 90%;
+    margin: auto;
+}
+
+.result-container h2 {
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.mid-section {
+    margin-top: 30px;
+}
+
+.bot-section {
+    margin-top: 30px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.mid-section .voteOptions,
+.mid-section .timer {
+    display: inline-block;
+}
+
+.voteOptions {
+    width: 10%;
+}
+
+.voteOptions .left {
+    text-align: left;
+}
+
+.timer {
+    width: 40%;
+    border-bottom: 1px solid #000;
+    line-height:0.1em;
+}
+
+.timerBox {
+    padding: 10px;
+    border: 1px solid #C9C9C9;
+    background-color: #ECECEC;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.voteOptions .right {
+    text-align: right;
+}
+
+.voteOptions .left-hr {
+    border: 3px solid red;
+}
+
+.option-col {
+    width: 100%;
+}
+
+.option-col div {
+    display: inline-block;
+    margin: auto;
+    padding: 0;
+}
+
+.option-col div:first-child {
+    text-align: left;
+    width: 65%;
+    height: 80px;
+}
+
+.result-container .option-col:nth-child(even) {
+    background-color: #65E570;
+}
+
+.result-container .option-col:nth-child(odd) {
+    background-color: #CBA9E4;
+}
+
+.option-col div p {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.bet-btn {
+    width: 34%;
+    background-color: #fff;
+    height: 102px;
+    border-bottom: 1px solid #9D9CA0;
+}
+
+.bet-btn button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E9C15C;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* End Result Page Css */

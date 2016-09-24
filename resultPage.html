@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bet Result</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCYXCul3nubv9nRJU4xG71uLXU6OpBY5vg",
+            authDomain: "vsw.firebaseapp.com",
+            databaseURL: "https://vsw.firebaseio.com",
+            storageBucket: "firebase-vsw.appspot.com",
+            messagingSenderId: "1028511849089"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-container">
+            <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--end top container div-->
+        <div class="result-container">
+            <div class="top-section">
+                <h2>Do you think Team WebDxD will win the BCLC challenge?</h2>
+                <p class="creator">
+                    Creator: Randy
+                </p>
+            </div>
+            <div class="mid-section">
+                <div class="totalBets">
+                    14 people have betted on this
+                </div>
+                <div class="voteOptions">
+                    <p class="left voteA">Yes</p>
+                    <p class="left participants">9 people</p>
+                </div>
+                <div class="timer">
+                    <span class="timerBox">
+                        14Day 3hr 1min 43sec
+                    </span>
+                </div>
+                <div class="voteOptions">
+                    <p class="right voteB">No</p>
+                    <p class="right participants">5 people</p>
+                </div>
+            </div>
+            <div class="bot-section">
+                <div class="reward">Reward: </div>
+                <div class="punishment">Punishment: </div>
+            </div>
+            <div class="option-col">
+                <div class="voteA">
+                    <p>1. YES</p>
+                </div>
+                <div class="bet-btn">
+                    <button>I will bet on this!</button>
+                </div>
+            </div>
+            <div class="option-col">
+                <div class="voteB">
+                    <p>2. NO</p>
+                </div>
+                <div class="bet-btn">
+                    <button>I will bet on this!</button>
+                </div>
+            </div>
+        </div>
+        <!--end result container div-->
+
+    </div>
+</body>
+</html>
