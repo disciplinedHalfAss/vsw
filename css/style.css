@@ -8,11 +8,15 @@
     margin: auto;
 }
 
-.top-container {
+.wrapper .top-container {
     width: 100%;
     margin: auto;
     background-color: #c0c0c0;
     height: 50px;
+}
+
+.dash-wrap .top-container {
+    height: 200px;
 }
 
 .top-container img {
@@ -123,13 +127,16 @@
     transform: translateX(-50%);
     background-color: #9D9CA0;
     width: 70%;
-    height: 70px;
+    height: 100px;
     margin: auto;
 }
 
 .user-info img {
     width: 70px;
     border-radius: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .user-info button {
@@ -145,9 +152,10 @@
 
 .user-info .user-name {
     position: absolute;
-    top: 10%;
+    top: 50%;
     left: 100px;
     margin: 0;
+    transform: translateY(-50%);
 }
 
 .bot-container {
