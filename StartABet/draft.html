@@ -45,6 +45,7 @@
 				<span class="content-text" id="sharing">2. Sharing</span>
 			</h1>	
 
+<<<<<<< HEAD
 			<input type="text" name="bet-questions" placeholder="Questions?" ng-model="question" >
 			<br><br>
 			
@@ -55,6 +56,18 @@
 				<input type="text" id="Option1" placeholder="Option 1" ng-model="option1">
 				<br><br>
 				<input type="text" id="Option2" placeholder="Option 2" ng-model="option2">
+=======
+			<input type="text" name="bet-questions" placeholder="Questions?">
+			<br><br>
+			
+			<input type="text" name="bet-rules" placeholder="Bet rules:" style="height:100px">
+			<br><br><br><br>
+
+			<div class="bet-options" id="bet-options">
+				<input type="text" id="Option1" placeholder="Option 1">
+				<br><br>
+				<input type="text" id="Option2" placeholder="Option 2">
+>>>>>>> origin/master
 				<br><br>
 		
 				<input type="button" value="Add a option" id="addButton">
@@ -65,6 +78,7 @@
 			</div>
 
 			<br>
+<<<<<<< HEAD
 			<input type="radio" name="stakes" value="Money $" >Money $ <input type="textbox" ng-model="bet_amount">
 			<br><br>
 			<input type="radio" name="stakes"><input type="textbox" placeholder="Rewards" ng-model="rewards"><input type="textbox" placeholder="Punishments" ng-model="punishments">
@@ -72,6 +86,15 @@
 			<div class="content-text">Bet time:</div><br>
 			<div class="bet-time"><span>Starts from:</span><input type="date" value="dd/mm/yy" ng-model="start_date"><input type="time" value="00:00 AM" ng-model="start_time"></div><br>
 			<div class="bet-time"><span>Ends at:</span><input type="date" value="dd/mm/yy" ng-model="end_date"><input type="time" value="00:00 AM" ng-model="end_time"></div><br>
+=======
+			<input type="radio" name="stakes" placeholder="Money $">Money $ <input type="textbox">
+			<br><br>
+			<input type="radio" name="stakes"><input type="textbox" placeholder="Rewards"><input type="textbox" value="Punishments">
+			<br><br><br><br>
+			<div class="content-text">Bet time:</div><br>
+			<div class="bet-time"><span>Starts from:</span><input type="date" placeholder="dd/mm/yy"><input type="time" placeholder="00:00 AM"></div><br>
+			<div class="bet-time"><span>Ends at:</span><input type="date" placeholder="dd/mm/yy"><input type="time" placeholder="00:00 AM"></div><br>
+>>>>>>> origin/master
 
 			<br>
 			<input type="button" value="Save as Draft" id="saveAsDraft" style="margin-right:320px">
