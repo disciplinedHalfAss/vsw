@@ -224,5 +224,28 @@
 .lose-btn {
     background-color: #FF0028;
 }
-
 /* End Dashboard CSS*/
+
+/* Bet created page / Bet shared page */
+.content {
+    width: 90%;
+    margin: auto;
+}
+
+.content button {
+    color: #fff;
+    cursor: pointer;
+    margin-top: 50px;
+    padding: 10px 15px;
+    background-color: #74CE84;
+    border-radius: 5px;
+}
+
+.share-link {
+    width: 60%;
+    color: #C9C9C9;
+    border: 1px solid #C9C9C9;
+    border-radius: 5px;
+    padding: 5px 50px 30px 5px;
+    background-color: #F6F6F6;
+}
