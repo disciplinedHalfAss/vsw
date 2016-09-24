@@ -67,7 +67,7 @@
 /* End Index CSS*/
 
 /* Login Pop up */
-.login-popup {
+.login-popup, .register-popup {
     display: none;
     position: absolute;
     left: 50%;
@@ -88,11 +88,11 @@
     cursor: pointer;
 }
 
-.login div {
+.login div , .register div{
     padding: 10px;
 }
 
-.login input {
+.login input, .register input {
     float: right;
 }
 
