@@ -2,23 +2,20 @@ var app = angular.module('startBet',['firebase']);
 var ref = new Firebase("https://vsw.firebaseio.com");
 
 app.controller("ibet", function($scope, $firebaseObject) {
-
+    var ibet = this;
+    var bets = [];
     var ref2 = new Firebase("https://vsw.firebaseio.com/bets");
     ref2.once("value", function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key();
-        var childData = childSnapshot.val().question;
-
-
-        console.log(key);
-        console.log(childData);
+        var childData = childSnapshot.val();
+        var bet = {
+        admin_user: childData.admin_user};
+        bets.push(bet);
       });
     });
 
-
-
     $scope.addBets = function(){
-
         if($scope.question==null){
             $('#question').addClass('red-border');
         }else if($scope.description==null){

@@ -89,3 +89,44 @@ $('#addButton').on('click',function(){
 	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' placeholder='Option"+ option_number +"'><br><br>");
 	option_number++;
 });
+$('#invite').on('click',function(){
+	var betsRef = ref.child("bets");
+    var newbetsRef = betsRef.push();
+    var betsID = newbetsRef.key();
+    newbetsRef.set({
+        admin_user: firebase.auth().currentUser.email,
+        rules:$('#description').val(),
+        money:$('#bet_amount').val(),
+        reward:$('#rewards').val(),
+        punishments:$('#punishments').val(),
+        invited:[firebase.auth().currentUser.email],
+        first_option:[firebase.auth().currentUser.email],
+        second_option:[firebase.auth().currentUser.email],
+        answer: "not answered"
+    });
+    window.location.replace("sharing.html");
+});
+var bets = new Firebase("https://vsw.firebaseio.com/bets");
+bets.once("value", function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+		var rules = childSnapshot.val().rules;
+		if(childSnapshot.val().admin_user==firebase.auth().currentUser.email){
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>View Results</button></div>");
+		}else if(check_include(childSnapshot.val().invited,firebase.auth().currentUser.email)){
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+		}else if(check_include(childSnapshot.val().first_option,firebase.auth().currentUser.email)){
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+		}else if(check_include(childSnapshot.val().second_option,firebase.auth().currentUser.email)){
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+		}
+	});
+});
+function check_include(a,b){
+	var flag = false;
+	for(var i=0; i<a.length; i++){
+		if(a[i]==b){
+			flag = true;
+		}
+	}
+	return flag;
+}
