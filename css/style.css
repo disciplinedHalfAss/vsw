@@ -59,7 +59,7 @@
 
 body {
   font-size:.9em;
-  font-family:sans-serif;
+  font-family: "Proxima Nova";
 }
 
 @keyframes spin {
@@ -366,23 +366,23 @@ label[for=secondroll] {
     position: relative;
 }
 
-.top-container {
+.top-signup {
 
     position: relative;
     display: block;
     text-align: right;
 }
 
-.top-container li{
+.top-signup li{
     display: inline-block;
-    border: 1px solid;
+    border: 1px solid white;
     margin-right: 30px;
     padding: 10px 10px;
 }
 
-.top-container li a{
+.top-signup li a{
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
     width: 20%;
     height: 100vh;
@@ -909,17 +909,20 @@ a:hover {
 .form1 {
   display: none;
   background: rgba(19, 35, 47, 0.9);
-  padding: 40px;
-  max-width: 380px;
+  padding: 70px;
+  max-width: 500px;
   margin: 36px auto;
+  height: 580px;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   position: absolute;
   left: 50%;
-    margin-left: -150px;
-
-
+  margin-left: -150px;
   z-index: 20;
+}
+
+.form1 button{
+    margin-bottom: 90px;
 }
 
 .tab-group {
@@ -1044,24 +1047,18 @@ textarea {
 #start-button{
     position: absolute;
     text-align: center;
-    margin-top: 6%;
+    margin-top: 3%;
     left: 50%;
-    margin-left: -130px;
-    cursor: pointer；
-
+    margin-left: -150px;
+    height: 80px;
+    width: 300px;
+    cursor: pointer;
+    padding: 0 0;
 }
 
-#start-button button{
-    height: 70px;
-    width: 260px;
-    font-size: 36px;
-    background-color: red;
-    color: white;
-    padding: 15px 15px;
-    border-radius: 8px;
-    border-style: solid;
-    border-width: 0.1px;
-    cursor: pointer；
+
+#start-button img{
+    
 
 }
 
@@ -1081,13 +1078,17 @@ textarea {
 
 }
 
-#logo-title span{
-   color: white;
-   font-size: 100px; 
+#logo-title img{
+   height: 100px;
+   width: 400px;
 }
 
 #logo-title .blue-logo{
-    color: blue;
+    color: #0bbfe1;
+}
+
+#dice{
+    margin-top: 50px;
 }
 
 
