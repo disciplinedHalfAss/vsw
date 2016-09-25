@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Start a Bet/Draft</title>
+	<title>Start a Bet / Draft</title>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
@@ -10,6 +10,8 @@
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/draft.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
       // Initialize Firebase
       var config = {
@@ -21,57 +23,77 @@
       };
       firebase.initializeApp(config);
     </script>
-	<link rel="stylesheet" href="../css/normalize.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
 </head>
-<body ng-app='startBet'>
-	<div class="wrapper" ng-controller='ibet'>
-		<div class="top-container">
-        	<img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-        	<nav class="top-nav">
-            	<ul>
-                	<li><a href="#">Log Out</a></li>
-            	</ul>
-        	</nav>
-    	</div>
-
+<body>
+	<div class="draft-wrapper">
+		<img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
+		<div class="logout">
+			<a href="#">Log Out</a>
+		</div>
 		<div class="main-content">
-			<h1>Start a Bet
-				<span class="content-text" id="draft">1. Draft</span>
-				<i class="fa fa-angle-right" style="font-size:20px"></i>
-				<span class="content-text" id="sharing">2. Sharing</span>
-			</h1>	
-			
-			<textarea id="description" type="text" name="bet-rules" placeholder="Bet rules:" style="height:100px"  ng-model="description"></textarea> 
-			
+			<h1>Start a Bet</h1>
 
-			<div class="bet-options" id="bet-options">
-				<input type="text" id="Option1" placeholder="Option 1" ng-model="option1">
-				
-				<input type="text" id="Option2" placeholder="Option 2" ng-model="option2">
-				
+			<div class="bet-qs q1">
+				<div class="q1">
+					What is your question or statement?
+				</div>
+				<input type="text" class="q1-input">
+				<div class="err-msg"></div>
 			</div>
+			<!--end q1 -->
 
-			<input type="button" value="Add an option" id="addButton">
-			
-			<div class="content-text">
-				What are you betting on?
+			<div class="bet-qs q2">
+				<div class="q2">
+					Make the options
+				</div>
+				<div class="bet-options" id="bet-options">
+					<input type="text" id="Option1" placeholder="Option 1" class="q2-options">
+					<input type="text" id="Option2" placeholder="Option 2" class="q2-options">
+				</div>
+				<div class="err-msg"></div>
+				<input type="button" value="Add an option" id="addButton">
 			</div>
+			<!--end q2-->
 
-			
-			<input type="radio" name="stakes" value="Money $" >Money $<input id="bet_amount" type="textbox" ng-model="bet_amount">
-			
-			<input  type="radio" name="stakes">
-			<input id="rewards" type="textbox" placeholder="Rewards" ng-model="rewards">
-			<input id="punishments" type="textbox" placeholder="Punishments" ng-model="punishments">
-			<input type="button" value="Save as Draft" id="saveAsDraft" style="margin-right:320px">
-			<button ng-click='addBets()' type="button" id="invite" style="background-color:#00cc00">Invite Others to Play</button>
+			<div class="bet-qs q3">
+				<div class="q3">
+					What stakes are you betting on?
+				</div>
+				<div class="bet-options">
+					<div class="bet-money">
+						<input type="radio" value="moneyBet" class="moneyBet" name="g1">
+						<div>Bet Money: </div>
+						<input type="number" placeholder="Please enter the amount" id="bet_amount">
+					</div>
+					<div class="bet-stake">
+						<input type="radio" value="stakeBet" class="stakeBet" name="g1">
+						<div>Bet Stake: </div>
+						<input type="text" placeholder="Please enter the stake betting" id="punishments">
+					</div>
+					<input type="text" placeholder="Please enter the reward" id="rewards">
+				</div>
+				<div class="err-msg"></div>
+			</div>
+			<!--end q3-->
+
+			<div class="bet-qs share">
+				<h3>Sharing settings</h3>
+				<h3>How to invite your friends?</h3>
+				<p>Generate a sharable link</p>
+				<p>Send invitation email</p>
+			</div>
 		</div>
 	</div>
+	<!--end draft wrapper-->
+	<footer class="fixed-footer">
+		<div class="footer-inputs">
+			<button class="pub-bet">Publish</button>
+			<input type="button" value="Save as Draft" id="saveAsDraft">
+			<button type="button" id="invite">Invite Others to Play</button>
+		</div>
+	</footer>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/global.js"></script>
-    <script src="../js/bet.js"></script>
+	<script src="../js/betStart.js"></script>
 </body>
 </html>

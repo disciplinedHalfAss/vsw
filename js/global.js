@@ -12,15 +12,12 @@ $(function(){
 
 });
 
-
 $(document).mouseup(function(e){
   var _con = $('.form1'); 
   if(!_con.is(e.target) && _con.has(e.target).length === 0){ 
   	$('.form1').hide();
   }
 });
-
-
 
 $('.register-btn').on('click',function(event){
 	if($('#register-name-input').val()==""){
@@ -91,7 +88,7 @@ $('.nav-logout').on('click',function(event){
 });
 var option_number = 3;
 $('#addButton').on('click',function(){
-	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' placeholder='Option"+ option_number +"'><br><br>");
+	$('.bet-qs.q2 .bet-options').append("<input class='q2-options' type='text' id='Option"+ option_number +"' placeholder='Option "+ option_number +"'>");
 	option_number++;
 });
 $('#invite').on('click',function(){
@@ -112,6 +109,127 @@ $('#invite').on('click',function(){
     window.location.replace("sharing.html");
 });
 
+var bets = new Firebase("https://vsw.firebaseio.com/bets");
+var hash = window.location.hash;
+var admin = null;
+var rules = null;
+var reward = null;
+var punishments = null;
+var answer = null;
+var invited = null;
+var first_option = null;
+var second_option = null;
+var money = null;
+bets.once("value", function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+		$('#user-name').text(firebase.auth().currentUser.displayName);
+		var participants = childSnapshot.val().first_option.length+childSnapshot.val().second_option.length;
+		if(childSnapshot.key()==hash.substring(1)){
+			admin = childSnapshot.val().admin_user;
+			rules = childSnapshot.val().rules;
+			reward = childSnapshot.val().reward;
+			punishments = childSnapshot.val().punishments;
+			$('.creator').text("Creator: " + admin);
+			$('.rules').text("Bet Rules: " + rules);
+			$('.reward').text("Rewards: " + reward);
+			$('.punishment').text("Punishments: " + punishments);
+		}
+		if(childSnapshot.val().admin_user==firebase.auth().currentUser.email){
+			if(childSnapshot.val().answer=="not answered"){
+				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}else{
+				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}
+		}else if(check_include(childSnapshot.val().invited,firebase.auth().currentUser.email)){
+			if(childSnapshot.val().answer=="not answered"){
+				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
+			}else{
+				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
+			}
+		}else if(check_include(childSnapshot.val().first_option,firebase.auth().currentUser.email)){
+			if(childSnapshot.val().answer=="not answered"){
+				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}else{
+				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}
+		}else if(check_include(childSnapshot.val().second_option,firebase.auth().currentUser.email)){
+			if(childSnapshot.val().answer=="not answered"){
+				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}else{
+				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+			}
+		}
+	})
+});
+$('.vote-a').on('click',function(){
+	bets.once("value", function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+			if(childSnapshot.key()==hash.substring(1)){
+				admin = childSnapshot.val().admin_user;
+				rules = childSnapshot.val().rules;
+				reward = childSnapshot.val().reward;
+				punishments = childSnapshot.val().punishments;
+				answer = childSnapshot.val().answer;
+				invited = childSnapshot.val().invited;
+				first_option = childSnapshot.val().first_option;
+				second_option = childSnapshot.val().second_option;
+				money = childSnapshot.val().money;
+			}
+		})
+	})
+	remove_element(invited,firebase.auth().currentUser.email);
+	first_option.push(firebase.auth().currentUser.email);
+	firebase.database().ref('bets/'+hash.substring(1)).set({
+
+				admin_user:admin,
+				rules:rules,
+				reward:reward,
+				punishments:punishments,
+				answer:answer,
+				invited:invited,
+				first_option:first_option,
+				second_option:second_option,
+				money:money
+	})
+});
+$('.vote-b').on('click',function(){
+	bets.once("value", function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+			if(childSnapshot.key()==hash.substring(1)){
+				admin = childSnapshot.val().admin_user;
+				rules = childSnapshot.val().rules;
+				reward = childSnapshot.val().reward;
+				punishments = childSnapshot.val().punishments;
+				answer = childSnapshot.val().answer;
+				invited = childSnapshot.val().invited;
+				first_option = childSnapshot.val().first_option;
+				second_option = childSnapshot.val().second_option;
+				money = childSnapshot.val().money;
+			}
+		})
+	})
+	remove_element(invited,firebase.auth().currentUser.email);
+	second_option.push(firebase.auth().currentUser.email);
+	firebase.database().ref('bets/'+hash.substring(1)).set({
+				admin_user:admin,
+				rules:rules,
+				reward:reward,
+				punishments:punishments,
+				answer:answer,
+				invited:invited,
+				first_option:first_option,
+				second_option:second_option,
+				money:money
+	})
+});
+function remove_element(a,b){
+	for(var i=0; i<a.length; i++){
+		if(a[i]==b){
+			a.splice(i,1);
+		}
+	}
+}
+
 function check_include(a,b){
 	var flag = false;
 	for(var i=0; i<a.length; i++){
@@ -121,6 +239,7 @@ function check_include(a,b){
 	}
 	return flag;
 }
+
 
 
 $('.form1').find('input, textarea').on('keyup blur focus', function (e) {
@@ -166,12 +285,6 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
-
-
-
-
-
-
 
 
 
