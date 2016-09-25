@@ -1,5 +1,5 @@
 body {
-    background: #008000 url(../image/grass-bg.png) no-repeat center fixed;
+    background: #008000 url(../image/grass-bg.png) fixed;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -26,7 +26,7 @@ body {
 
 .main-content {
     clear: both;
-    width: 80%;
+    width: 50%;
     margin: auto;
     padding-top: 200px;
     /*position: absolute;*/
@@ -49,7 +49,7 @@ body {
 }
 
 .bet-qs {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 180px;
     display: none;
 }
@@ -75,7 +75,8 @@ body {
     text-align: center;
 }
 
-.err-msg {
+.err-msg,
+.main-err-msg {
     clear: both;
     text-align: center;
     margin-top: 10px;
@@ -84,18 +85,63 @@ body {
 
 .bet-qs.q3 input[type='text'],
 .bet-qs.q3 input[type='number']{
-    float: right;
-    margin-top: 16px;
-    margin-right: 170px;
+    width: 250px;
+    /*margin-top: 16px;*/
+    /*margin-right: 170px;*/
+
 }
 
-.bet-qs.q3 .bet-options div {
-    margin: 20px;
+.bet-qs.q3 input[type='radio'] {
+    width: 5%;
 }
+
 
 .pub-bet {
-    margin-right: 50px;
+    display: none;
     padding: 15px;
     background-color: lightgreen;
     border-radius: 5px;
+}
+
+.bet-money,
+.bet-punish {
+    margin: 10px 0;
+}
+
+.bet-punish {
+    margin-top: 50px;
+}
+
+.punish-rewards-and {
+    margin: 10px 0;
+    text-align: center;
+}
+
+input#punishments.punish-input,
+input#rewards.rewards-input {
+    width: 250px;
+}
+
+input {
+    font-size: 18px;
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.punish-inline {
+    display: inline-block;
+}
+
+#invite {
+    display: none;
+}
+
+#addButton {
+    width: 50%;
+}
+
+.addBtn-div {
+    width: 100%;
+    text-align: center;
 }

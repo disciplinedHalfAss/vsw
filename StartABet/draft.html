@@ -9,7 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="../css/draft.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
@@ -51,7 +51,10 @@
 					<input type="text" id="Option2" placeholder="Option 2" class="q2-options">
 				</div>
 				<div class="err-msg"></div>
-				<input type="button" value="Add an option" id="addButton">
+				<div class="addBtn-div">
+					<input type="button" value="Add an option" id="addButton">
+				</div>
+
 			</div>
 			<!--end q2-->
 
@@ -62,17 +65,19 @@
 				<div class="bet-options">
 					<div class="bet-money">
 						<input type="radio" value="moneyBet" class="moneyBet" name="g1">
-						<div>Bet Money: </div>
 						<input type="number" placeholder="Please enter amount" id="bet_amount">
+						<div class="err-msg"></div>
 					</div>
-					<div class="bet-stake">
+					<div class="bet-punish">
 						<input type="radio" value="stakeBet" class="stakeBet" name="g1">
-						<div>Bet Stake: </div>
-						<input type="text" placeholder="Please enter the stake betting" id="punishments">
+						<!--<div>Bet Stake: </div>-->
+						<input type="text" placeholder="Please enter the punishments" id="punishments" class="punish-input punish-inline">
+						<div class="punish-rewards-and punish-inline">and</div>
+						<input type="text" placeholder="Please enter the rewards" id="rewards" class="rewards-input punish-inline">
+						<div class="err-msg"></div>
 					</div>
-					<input type="text" placeholder="Please enter the reward" id="rewards">
+					<div class="main-err-msg"></div>
 				</div>
-				<div class="err-msg"></div>
 			</div>
 			<!--end q3-->
 
