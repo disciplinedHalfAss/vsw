@@ -52,6 +52,8 @@ $(function(){
    $('.pub-bet').on('click', function(){
       if($('#rewards').val() == ""){
          $('.bet-qs.q3 .err-msg').text(fieldReqMsg);
+      }else{
+         $('.bet-qs.q3 .err-msg').text("");
       }
    })
 });
