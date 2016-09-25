@@ -2,7 +2,7 @@
  * Created by et-asus on 25/09/16.
  */
 $(function(){
-   $('.bet-qs').show();
+   $('.bet-qs').first().show();
 
    var fieldReqMsg = 'This field is required!';
 
@@ -50,8 +50,26 @@ $(function(){
    }); //end q2
 
    $('.pub-bet').on('click', function(){
+      function isOneChecked() {
+         var chx = $('.bet-qs.q3 input');
+         for (var i=0; i<chx.length; i++) {
+            if (chx[i].type == 'radio' && chx[i].checked) {
+               return true;
+            }
+         }
+         return false;
+      }
+      
+      if(!isOneChecked()){
+         $('.bet-qs.q3 .err-msg').text("Select either bet money / stake");
+         return false;
+      }else{
+         $('.bet-qs.q3 .err-msg').text("");
+      }
+      
       if($('#rewards').val() == ""){
-         $('.bet-qs.q3 .err-msg').text(fieldReqMsg);
+         $('.bet-qs.q3 .err-msg').text("Reward must be entered!");
+         return false;
       }else{
          $('.bet-qs.q3 .err-msg').text("");
       }
