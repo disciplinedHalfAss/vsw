@@ -3,20 +3,25 @@
  */
 var ref = new Firebase("https://vsw.firebaseio.com");
 $(function(){
-	$('.nav-login').on('click', function(){
-	   $('.login-popup ').show();
-	   $('.wrapper').addClass('cover');
-	});
 	$('.nav-register').on('click', function(){
-	   $('.register-popup ').show();
-	   $('.wrapper').addClass('cover');
+	   $('.form1').show();
 	});
 	$('.close-popup').on('click', function(){
-	   $('.login-popup ').hide();
-	   $('.register-popup ').hide();
-	   $('.wrapper').removeClass('cover');
+
 	});
+
 });
+
+
+$(document).mouseup(function(e){
+  var _con = $('.form1'); 
+  if(!_con.is(e.target) && _con.has(e.target).length === 0){ 
+  	$('.form1').hide();
+  }
+});
+
+
+
 $('.register-btn').on('click',function(event){
 	if($('#register-name-input').val()==""){
 		$('.register-input').removeClass('red-border');
@@ -40,7 +45,7 @@ $('.register-btn').on('click',function(event){
 		}).then(
 			function(){
 				firebase.auth().currentUser.updateProfile({
-					displayName:$('#register-name-input').val()
+					displayName:$('#register-email-input').val()
 				})
 				.then(function() {
 					// Update successful.
@@ -106,39 +111,7 @@ $('#invite').on('click',function(){
     });
     window.location.replace("sharing.html");
 });
-var bets = new Firebase("https://vsw.firebaseio.com/bets");
-bets.once("value", function(snapshot) {
-	snapshot.forEach(function(childSnapshot) {
-		$('#user-name').text(firebase.auth().currentUser.displayName);
-		var participants = childSnapshot.val().first_option.length+childSnapshot.val().second_option.length;
-		if(childSnapshot.val().admin_user==firebase.auth().currentUser.email){
-			if(childSnapshot.val().answer=="not answered"){
-				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}else{
-				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}
-		}else if(check_include(childSnapshot.val().invited,firebase.auth().currentUser.email)){
-			if(childSnapshot.val().answer=="not answered"){
-				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
-			}else{
-				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
-			}
-		}else if(check_include(childSnapshot.val().first_option,firebase.auth().currentUser.email)){
-			if(childSnapshot.val().answer=="not answered"){
-				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}else{
-				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}
-		}else if(check_include(childSnapshot.val().second_option,firebase.auth().currentUser.email)){
-			if(childSnapshot.val().answer=="not answered"){
-				$('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}else{
-				$('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
-			}
-			
-		}
-	});
-});
+
 function check_include(a,b){
 	var flag = false;
 	for(var i=0; i<a.length; i++){
@@ -148,3 +121,60 @@ function check_include(a,b){
 	}
 	return flag;
 }
+
+
+$('.form1').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,24 +23,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="blank-area"></div>
+    <div id="grey-screen"></div>
+
     <div class="wrapper">
 
-    <div class="top-container">
-        <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-        <nav class="top-nav">
-            <ul>
-                <li><a href="#" class="nav-register">Sign up</a></li>
-                <li><a href="#" class="nav-login">Log In</a></li>
+            <ul class="top-container">
+                <li><a href="#" class="nav-register">Sign up/Log In</a></li>
             </ul>
-        </nav>
-    </div>
 <!-- dice-start -->
-    <!-- <div id="background"></div> -->
+
     <div id="d-wrapper">
-    	<!-- <input id="secondroll" name="roll" type="checkbox">
-    	<input id="roll" name="roll" type="checkbox">
-    	<label for="roll">Roll it!</label>
-    	<label for="secondroll"><span>Stop!</span></label> -->
+
     	<div id="platform">
     		<div id="dice">
     			<div class="side front">
@@ -90,64 +84,68 @@
     		</div>
     	</div>
     </div>
-<!-- dice end -->
-    <div class="slider">
-        <button class="start-bet">Start a Bet!</button>
-    </div>
 
-    <div class="container">
-        <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-    </div>
 
-    <div class="container">
-        <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-    </div>
 
-    <div class="container">
-        <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-    </div>
-</div>
-    <div class="login-popup">
-        <header>Login<span class="close-popup">X</span></header>
-        <div class="login">
-            <form action="">
-                <div>
-                    <label for="username-input" class="username-label">E-mail: </label>
-                    <input type="text" name="login-email" class="login-input" id="login-email-input">
-                </div>
-                <div>
-                    <label for="password-input" class="password-label">Password: </label>
-                    <input type="password" name="login-password" class="login-input" id="login-password-input">
-                </div>
-                <div>
-                    <div class="login-btn">Log In</div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="register-popup">
-        <header>Register<span class="close-popup">X</span></header>
-        <div class="register">
-            <form action="">
-                <div>
-                    <label for="username-input" class="username-label">Full Name: </label>
-                    <input type="text" name="register-name" class="register-input" id="register-name-input">
-                </div>
-                <div>
-                    <label for="username-input" class="username-label">E-mail: </label>
-                    <input type="text" name="register-email" class="register-input" id="register-email-input">
-                </div>
-                <div>
-                    <label for="password-input" class="password-label">Password: </label>
-                    <input type="password" name="register-password" class="register-input" id="register-password-input">
-                </div>
-                <div>
-                    <div class="register-btn">Register</div>
-                </div>
-            </form>
-        </div>
-    </div>
+
+    <div class="form1">
+
+        <ul class="tab-group">
+            <li class="tab active"><a href="#signup">Sign Up</a></li>
+            <li class="tab"><a href="#login">Log In</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="signup">   
+                <h1>Sign Up for Free</h1>
+                <form action="">
+                    <div class="field-wrap">
+                        <input id="register-name-input" class="register-input"  placeholder="Full Name" type="text" required autocomplete="off" />
+                    </div>
+
+                    <div class="field-wrap">
+                        <input id="register-email-input" class="register-input"  placeholder="Email Address" type="text" required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <input id="register-password-input" class="register-input"  placeholder="Password" type="password" required autocomplete="off"/>
+                    </div>
+
+                    <button type="submit" class="button button-block register-btn "/>Get Started</button>
+                </form>
+            </div>
+
+            <div id="login">   
+                <h1>Welcome Back!</h1>
+                <form action="">
+                    <div class="field-wrap">
+                        <input id="login-email-input" class="login-input" placeholder="Email" type="text" required autocomplete="off"/>
+                    </div>
+                    <div class="field-wrap">
+                        <input id="login-password-input" class="login-input" placeholder="Password" type="password" required autocomplete="off"/>
+                    </div>
+
+                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+                    <button class="button button-block login-btn"/>Log In</button>
+                </form>
+            </div>
+
+        </div><!-- tab-content -->
+
+    </div> <!-- /form -->
+
+
     <script src="js/jquery.min.js"></script>
-    <script src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.22.custom.min.js"></script>
+<script type="text/javascript" src="js/video.js"></script>
+<script type="text/javascript" src="js/bigvideo.js"></script>
+<script src="js/global.js"></script>
+<script type="text/javascript">
+            $(function() {
+              var BV = new $.BigVideo({useFlashForFirefox:false});
+              BV.init();
+              BV.show('background.mp4', {altSource:'background.mp4', ambient: true});
+            });
+</script>
 </body>
 </html>
