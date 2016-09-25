@@ -3,20 +3,22 @@
  */
 var ref = new Firebase("https://vsw.firebaseio.com");
 $(function(){
-	$('.nav-login').on('click', function(){
-	   $('.login-popup ').show();
-	   $('.wrapper').addClass('cover');
-	});
 	$('.nav-register').on('click', function(){
-	   $('.register-popup ').show();
-	   $('.wrapper').addClass('cover');
+	   $('.form1').show();
 	});
 	$('.close-popup').on('click', function(){
-	   $('.login-popup ').hide();
-	   $('.register-popup ').hide();
-	   $('.wrapper').removeClass('cover');
+
 	});
+
 });
+
+$(document).mouseup(function(e){
+  var _con = $('.form1'); 
+  if(!_con.is(e.target) && _con.has(e.target).length === 0){ 
+  	$('.form1').hide();
+  }
+});
+
 $('.register-btn').on('click',function(event){
 	if($('#register-name-input').val()==""){
 		$('.register-input').removeClass('red-border');
@@ -40,7 +42,7 @@ $('.register-btn').on('click',function(event){
 		}).then(
 			function(){
 				firebase.auth().currentUser.updateProfile({
-					displayName:$('#register-name-input').val()
+					displayName:$('#register-email-input').val()
 				})
 				.then(function() {
 					// Update successful.
@@ -106,6 +108,7 @@ $('#invite').on('click',function(){
     });
     window.location.replace("sharing.html");
 });
+
 var bets = new Firebase("https://vsw.firebaseio.com/bets");
 var hash = window.location.hash;
 var admin = null;
@@ -226,6 +229,7 @@ function remove_element(a,b){
 		}
 	}
 }
+
 function check_include(a,b){
 	var flag = false;
 	for(var i=0; i<a.length; i++){
@@ -235,3 +239,55 @@ function check_include(a,b){
 	}
 	return flag;
 }
+
+
+
+$('.form1').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+
+
+
+
+
+

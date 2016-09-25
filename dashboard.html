@@ -58,5 +58,47 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/global.js"></script>
+
+    <script type="text/javascript">
+        
+        var bets = new Firebase("https://vsw.firebaseio.com/bets");
+bets.once("value", function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+        $('#user-name').text(firebase.auth().currentUser.displayName);
+        var participants = childSnapshot.val().first_option.length+childSnapshot.val().second_option.length;
+        if(childSnapshot.val().admin_user==firebase.auth().currentUser.email){
+            if(childSnapshot.val().answer=="not answered"){
+                $('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }else{
+                $('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }
+        }else if(check_include(childSnapshot.val().invited,firebase.auth().currentUser.email)){
+            if(childSnapshot.val().answer=="not answered"){
+                $('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
+            }else{
+                $('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'><img src='image/fencing.png'>Place Your Bet</a></div></div>");
+            }
+        }else if(check_include(childSnapshot.val().first_option,firebase.auth().currentUser.email)){
+            if(childSnapshot.val().answer=="not answered"){
+                $('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }else{
+                $('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }
+        }else if(check_include(childSnapshot.val().second_option,firebase.auth().currentUser.email)){
+            if(childSnapshot.val().answer=="not answered"){
+                $('#current').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }else{
+                $('#expired').append("<div class='bet-wrapper'><div class='bet-title'><p class='rules'>"+ childSnapshot.val().rules +"</p><p class='admin'><img src='image/admin.png' class='admin-icon'> Created by: "+ childSnapshot.val().admin_user +"</p><p class='user-number'>"+ participants +" people have betted on this one!</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='view-result-btn'><img src='image/clock.png'>Participated</a></div></div>");
+            }
+            
+        }
+    });
+});
+
+
+
+
+        
+    </script>
 </body>
 </html>
