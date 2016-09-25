@@ -2,7 +2,7 @@
  * Created by et-asus on 25/09/16.
  */
 $(function(){
-   $('.bet-qs').first().show();
+   $('.bet-qs').show();
 
    var fieldReqMsg = 'This field is required!';
 
@@ -64,6 +64,23 @@ $(function(){
          $('.bet-qs.q3 .err-msg').text("Select either bet money / stake");
          return false;
       }else{
+         switch($('input[name=g1]:checked').val()){
+            case 'moneyBet':
+                if(($('#bet_amount').val() == "")){
+                   $('.bet-qs.q3 .err-msg').text("Enter Amount");
+                   return false;
+                }else if((($('#bet_amount').val() < 0)) || (isNaN($('#bet_amount').val()))){
+                   $('.bet-qs.q3 .err-msg').text("Enter A Real Number");
+                   return false;
+                }else{
+                   $('.bet-qs.q3 .err-msg').text("");
+                }
+            break;
+            case 'stakeBet':
+               (($('#punishments').val() == "")) ? $('.bet-qs.q3 .err-msg').text("Enter Stake") : $('.bet-qs.q3 .err-msg').text("");
+                return false;
+            break;
+         }
          $('.bet-qs.q3 .err-msg').text("");
       }
       
