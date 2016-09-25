@@ -43,15 +43,8 @@ $('.register-btn').on('click',function(event){
 			function(){
 				firebase.auth().currentUser.updateProfile({
 					displayName:$('#register-email-input').val()
-				})
-				.then(function() {
-					// Update successful.
-					window.location.replace("dashboard.html");
-					console.log("user profile updated successfully");
-				}, function(error) {
-					// An error happened.
-					console.log(error);
 				});
+				window.location.replace("dashboard.html");
 			}
 		)
 	}
