@@ -76,6 +76,8 @@ body {
 }
 
 .err-msg {
+    clear: both;
+    text-align: center;
     margin-top: 10px;
     color: #ff0000;
 }
