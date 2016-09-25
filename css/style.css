@@ -13,6 +13,14 @@
     margin: auto;
     height: 50px;
 }
+.wrapper .top-container {
+    width: 90%;
+    height: 60%;
+    margin: 30px 100px auto 100px;
+    background-color: #c0c0c0;
+    z-index: -1;
+    border: 1.5px solid #9E9E9E;
+}
 
 
 .dash-wrap{
@@ -441,7 +449,6 @@ label[for=secondroll] {
 }
 
 .bot-container {
-<<<<<<< HEAD
     width: 100%;
     position: absolute;
     background-color: #D78387;
@@ -717,10 +724,13 @@ h1 span#sharing {
 
 /* Result Page Css */
 .result-container {
-    width: 100%;
-    margin: auto;
-    background-color: #D7D7D7;
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    margin: 500px 100px 0px 160px;
+    background-color: #fff;
     text-align: center;
+    border: 1.5px solid #9E9E9E;
 }
 
 .result-container p,
@@ -728,7 +738,9 @@ h1 span#sharing {
     margin: 0;
 }
 
-.top-section,
+.top-section {
+    
+}
 .mid-section,
 .bot-section {
     width: 90%;
