@@ -2,7 +2,7 @@
  * Created by et-asus on 25/09/16.
  */
 $(function(){
-   $('.bet-qs').show();
+   $('.bet-qs').first().show();
 
    var fieldReqMsg = 'This field is required!';
 
@@ -46,10 +46,11 @@ $(function(){
          $('html, body').animate({
             scrollTop: $(".bet-qs.q3").offset().top
          }, 2000);
+         $('.pub-bet').show();
       }
    }); //end q2
 
-   $('.pub-bet').on('click', function(){
+   $('.pub-bet, #saveAsDraft').on('click', function(){
       function isOneChecked() {
          var chx = $('.bet-qs.q3 input');
          for (var i=0; i<chx.length; i++) {
@@ -61,34 +62,43 @@ $(function(){
       }
       
       if(!isOneChecked()){
-         $('.bet-qs.q3 .err-msg').text("Select either bet money / stake");
+         $('.bet-qs.q3 .main-err-msg').text("Please bet either money / punishments");
          return false;
       }else{
          switch($('input[name=g1]:checked').val()){
             case 'moneyBet':
                 if(($('#bet_amount').val() == "")){
-                   $('.bet-qs.q3 .err-msg').text("Enter Amount");
+                   $('.bet-qs.q3 .bet-money .err-msg').text("Enter An Amount Please");
+                   $('.bet-qs.q3 .bet-punish .err-msg').text("");
+                   $('.bet-qs.q3 .main-err-msg').text("");
                    return false;
                 }else if((($('#bet_amount').val() < 0)) || (isNaN($('#bet_amount').val()))){
-                   $('.bet-qs.q3 .err-msg').text("Enter A Real Number");
+                   $('.bet-qs.q3 .bet-money .err-msg').text("Enter A Real Number");
+                   $('.bet-qs.q3 .bet-punish .err-msg').text("");
+                   $('.bet-qs.q3 .main-err-msg').text("");
                    return false;
                 }else{
-                   $('.bet-qs.q3 .err-msg').text("");
+                   $('.bet-qs.q3 .bet-money .err-msg').text("");
+                   $('.bet-qs.q3 .bet-punish .err-msg').text("");
+                   $('.bet-qs.q3 .main-err-msg').text("");
                 }
             break;
             case 'stakeBet':
-               (($('#punishments').val() == "")) ? $('.bet-qs.q3 .err-msg').text("Enter Stake") : $('.bet-qs.q3 .err-msg').text("");
-                return false;
+                if(($('#punishments').val() == "") || ($('#rewards').val() == "")){
+                   $('.bet-qs.q3 .bet-punish .err-msg').text("Please enter punishments & rewards");
+                   $('.bet-qs.q3 .bet-money .err-msg').text("");
+                   $('.bet-qs.q3 .main-err-msg').text("");
+                   return false;
+                }else{
+                   $('.bet-qs.q3 .bet-punish .err-msg').text("");
+                   $('.bet-qs.q3 .bet-money .err-msg').text("");
+                   $('.bet-qs.q3 .main-err-msg').text("");
+                }
             break;
          }
-         $('.bet-qs.q3 .err-msg').text("");
-      }
-      
-      if($('#rewards').val() == ""){
-         $('.bet-qs.q3 .err-msg').text("Reward must be entered!");
-         return false;
-      }else{
-         $('.bet-qs.q3 .err-msg').text("");
+         $('.bet-qs.q3 .bet-punish .err-msg').text("");
+         $('.bet-qs.q3 .bet-money .err-msg').text("");
+         $('.bet-qs.q3 .main-err-msg').text("");
       }
    })
 });
