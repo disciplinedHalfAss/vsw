@@ -109,15 +109,14 @@ $('#invite').on('click',function(){
 var bets = new Firebase("https://vsw.firebaseio.com/bets");
 bets.once("value", function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
-		var rules = childSnapshot.val().rules;
 		if(childSnapshot.val().admin_user==firebase.auth().currentUser.email){
-			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>View Results</button></div>");
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'>View Results</a></div>");
 		}else if(check_include(childSnapshot.val().invited,firebase.auth().currentUser.email)){
-			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'>Start Betting</a></div>");
 		}else if(check_include(childSnapshot.val().first_option,firebase.auth().currentUser.email)){
-			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'>Start Betting</a></div>");
 		}else if(check_include(childSnapshot.val().second_option,firebase.auth().currentUser.email)){
-			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><button class='go-betting-btn'>Start Betting</button></div>");
+			$('#current').append("<div class='bet-title'><p>123</p></div><div class='bet-action'><a href='resultPage.html#" + childSnapshot.key() + "' class='go-betting-btn'>Start Betting</a></div>");
 		}
 	});
 });

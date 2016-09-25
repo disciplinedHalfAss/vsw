@@ -192,7 +192,7 @@
     float: left;
 }
 
-.bets-list button {
+.bets-list a {
     float: right;
 }
 
@@ -208,9 +208,7 @@
 .bet-action button {
     cursor: pointer;
     width: 120px;
-    padding: 10px;
     margin-top: -10px;
-    border-radius: 5px;
 }
 
 .go-betting-btn {
@@ -501,11 +499,11 @@ div.options div.opB {
     padding-right: 10px;
 }
 
-.bet-action button {
+.bet-action a{
     cursor: pointer;
     width: 150px;
     padding: 10px;
-    margin-top: 23px;
+    margin-top: 3px;
     border-radius: 5px;
 }
 
