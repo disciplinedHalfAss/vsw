@@ -463,12 +463,13 @@ label[for=secondroll] {
     position: relative;
     display: block;
     text-align: right;
-    background-color: white;
+    
 }
 .top-container {
     height: 100vh;
     width: 20%;
     position: absolute;
+    background-color: white;
 
     
 }
