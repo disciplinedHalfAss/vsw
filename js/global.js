@@ -86,7 +86,7 @@ $('.nav-logout').on('click',function(event){
 });
 var option_number = 3;
 $('#addButton').on('click',function(){
-	$('.bet-options').append("<input type='text' id='Option"+ option_number +"' placeholder='Option"+ option_number +"'><br><br>");
+	$('.bet-qs.q2 .bet-options').append("<input class='q2-options' type='text' id='Option"+ option_number +"' placeholder='Option "+ option_number +"'>");
 	option_number++;
 });
 $('#invite').on('click',function(){
