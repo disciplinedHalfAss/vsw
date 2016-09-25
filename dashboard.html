@@ -27,34 +27,34 @@
 <body ng-app='startBet'>
     <div class="dash-wrap" ng-controller='ibet'>
         <div class="top-container">
-            <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-            <nav class="top-nav">
-                <ul>
-                    <a href="index.html"><li class="nav-logout">Log Out</li></a>
-                </ul>
-            </nav>
 
             <div class="user-info">
-                <img src="http://hearstcommerce.ca/customcontent/members/premium/sample.jpg" alt="">
-                <p class="user-name"></p>
+                <img src="image/dp.jpg" alt="">
+                <p id="user-name"></p>
+                <p>Bets</p>
+                <a href="">Active</a>
+                <a href="">Finished</a>
                 <a href="StartABet/draft.html">Start A Bet</a>
             </div>
         </div>
         <!--End Top Container-->
 
         <div class="bot-container" >
+            <nav class="top-nav">
+                    <a href="index.html" class="nav-logout">Log Out</a>
+            </nav>
             <div class="in-play">
-                <header><p>Current Bets</p></header>
+                <header><p>Active Bets</p></header>
                 <div id="current" class="bets-list" ng-repeat="line in lines">
                 </div>
-                
+                <header><p>Expired Bets</p></header>
+                <div id="expired" class="bets-list">
+                </div>
             </div>
             <!--end in-play div-->
 
 
-            <div id="expired" class="expired-play">
-                <header><p>Expired Bets</p></header>
-            </div>
+            
             <!--End expired-play div-->
         </div>
         <!--End Bot Container-->

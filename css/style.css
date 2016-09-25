@@ -1,4 +1,11 @@
 /* Index CSS*/
+a, a:hover{
+    text-decoration: none;
+    color: #808080;
+}
+body{
+    font-family: 'Proxima Nova';
+}
 .cover {
     filter: opacity(50%);
 }
@@ -348,7 +355,18 @@ label[for=secondroll] {
     width: 90%;
     margin: auto;
 }
-
+.user-info img{
+    margin: 100px auto 0 auto;
+    border:2px solid white;
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+}
+.user-info p, .user-info a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
 .login-btn {
     margin-top: 10px;
     width: 100%;
@@ -363,29 +381,16 @@ label[for=secondroll] {
 }
 
 .top-container {
-    width: 100%;
-    height: 200px;
-    background-color: #D7D7D7;
+    position:absolute;
+    width: 30%;
+    height: 100%;
 }
 
 .user-info {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #9D9CA0;
-    width: 70%;
-    height: 100px;
-    margin: auto;
+    width: 100%;
 }
 
-.user-info img {
-    width: 70px;
-    border-radius: 50%;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 .user-info button {
     cursor: pointer;
@@ -407,32 +412,26 @@ label[for=secondroll] {
 }
 
 .bot-container {
-    width: 100%;
+    left:30%;
+    width: 70%;
     position: absolute;
-    background-color: #D78387;
     margin: auto;
-    padding-bottom: 100px;
 }
 
 .bot-container header {
     margin: auto;
-    width: 70%;
-    background-color: #D7D7D7;
-    border-bottom: 1px solid #000;
+    width: 90%;
+    border-bottom: 1px solid white;
 }
 
 .bot-container header p {
     margin: 0;
     width: 100%;
-    padding: 10px 0 10px 10px;
 }
 
 .bets-list {
-    width: 70%;
+    width: 85%;
     margin: auto;
-    background-color: #F6F6F6;
-    height: 100px;
-    border-bottom: 1px solid #5E5E5E;
 }
 
 .bets-list p {
@@ -443,14 +442,33 @@ label[for=secondroll] {
 .bets-list a {
     float: right;
 }
-
-.bet-title {
-    padding-top: 35px;
-    padding-left: 10px;
+.bet-wrapper{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin: 20px 0;
+    background-color: #F6F6F6;
+    box-shadow: 0px 2px 10px -3px rgba(100, 100, 100, .5);
+}
+.bet-title .rules{
+    margin-left:30px;
+    position:absolute;
+    font-size: 20px;
+    top:40%;
+    transform: translateY(-50%);
+}
+.admin-icon{
+    width: 15px;
+}
+.bet-action a{
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    right: 0;
 }
 
-.bet-action {
-    padding-right: 10px;
+.bet-action a{
 }
 
 .bet-action button {
@@ -460,9 +478,44 @@ label[for=secondroll] {
 }
 
 .go-betting-btn {
-    background-color: #ffff00;
+    background-color: #ea5f46;
+    color: white;
+    text-align: center;
 }
+.go-betting-btn:hover{
+    color:white;
+}
+.go-betting-btn img{
+    width: 40px;
+    margin:22px auto 5px auto;
+    display:block;
+}
+.view-result-btn img{
+    width: 40px;
+    margin:22px auto 5px auto;
+    display:block;
+}
+.user-number{
+    position: absolute;
+    bottom: 10px;
+    right: 33%;
+    color:#a9a9a9;
 
+}
+.admin{
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    color: #a9a9a9;
+}
+.view-result-btn{
+    background-color: #4f9bd6;
+    color: white;
+    text-align: center;
+}
+.view-result-btn:hover{
+    color:white;
+}
 .win-btn {
     background-color: #68E488;
 }
@@ -749,13 +802,6 @@ div.options div.opB {
     padding-right: 10px;
 }
 
-.bet-action a{
-    cursor: pointer;
-    width: 150px;
-    padding: 10px;
-    margin-top: 3px;
-    border-radius: 5px;
-}
 
 .place-bet-btn {
     background-color: #E9C15C;
