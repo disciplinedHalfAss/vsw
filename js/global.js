@@ -84,12 +84,14 @@ $('#addButton').on('click',function(){
 	$('.bet-qs.q2 .bet-options').append("<input class='q2-options' type='text' id='Option"+ option_number +"' placeholder='Option "+ option_number +"'>");
 	option_number++;
 });
-$('#invite').on('click',function(){
+$('#publish').on('click',function(){
 	var betsRef = ref.child("bets");
     var newbetsRef = betsRef.push();
     var betsID = newbetsRef.key();
     newbetsRef.set({
         admin_user: firebase.auth().currentUser.email,
+       	option_one:$('#option_one').val(),
+       	option_two:$('#option_two').val(),
         rules:$('#description').val(),
         money:$('#bet_amount').val(),
         reward:$('#rewards').val(),
@@ -99,7 +101,7 @@ $('#invite').on('click',function(){
         second_option:[firebase.auth().currentUser.email],
         answer: "not answered"
     });
-    window.location.replace("sharing.html");
+    window.location.replace("../dashboard.html");
 });
 
 var bets = new Firebase("https://vsw.firebaseio.com/bets");

@@ -35,9 +35,9 @@
 
 			<div class="bet-qs q1">
 				<div class="q1">
-					What is your question or statement?
+					What are you betting on?
 				</div>
-				<input type="text" class="q1-input">
+				<input type="text" class="q1-input" id="description">
 				<div class="err-msg"></div>
 			</div>
 			<!--end q1 -->
@@ -47,8 +47,8 @@
 					Make the options
 				</div>
 				<div class="bet-options" id="bet-options">
-					<input type="text" id="Option1" placeholder="Option 1" class="q2-options">
-					<input type="text" id="Option2" placeholder="Option 2" class="q2-options">
+					<input type="text" placeholder="Option 1" class="q2-options" id="option_one">
+					<input type="text" placeholder="Option 2" class="q2-options" id="option_two">
 				</div>
 				<div class="err-msg"></div>
 				<div class="addBtn-div">
@@ -60,12 +60,12 @@
 
 			<div class="bet-qs q3">
 				<div class="q3">
-					What stakes are you betting on?
+					What are you betting on?
 				</div>
 				<div class="bet-options">
 					<div class="bet-money">
 						<input type="radio" value="moneyBet" class="moneyBet" name="g1">
-						<input type="number" placeholder="Please enter amount" id="bet_amount">
+						<input type="number" placeholder="Please enter amount" id="bet_amount" id="bet_amount">
 						<div class="err-msg"></div>
 					</div>
 					<div class="bet-punish">
@@ -80,7 +80,6 @@
 				</div>
 			</div>
 			<!--end q3-->
-
 			<div class="bet-qs share">
 				<h3>Sharing settings</h3>
 				<h3>How to invite your friends?</h3>
@@ -92,7 +91,7 @@
 	<!--end draft wrapper-->
 	<footer class="fixed-footer">
 		<div class="footer-inputs">
-			<button class="pub-bet">Publish</button>
+			<button class="pub-bet" id="publish">Publish</button>
 			<input type="button" value="Save as Draft" id="saveAsDraft">
 			<button type="button" id="invite">Invite Others to Play</button>
 		</div>

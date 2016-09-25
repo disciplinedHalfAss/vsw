@@ -7,9 +7,6 @@ a, a:hover{
 body{
     font-family: 'Proxima Nova';
 }
-.cover {
-    filter: opacity(50%);
-}
 .top-container img {
      position: relative;
      width: 50px;
@@ -111,12 +108,6 @@ body{
     background-color: white;
 }
 
-.cover{
-    width: 200vh;
-    height: 100vh;
-    background-color: black;
-    opacity: 0.5;
-}
 
 
 
@@ -449,6 +440,10 @@ label[for=secondroll] {
     margin-top: 10px;
     width: 100%;
 }
+.bot-container{
+    overflow-y:scroll;
+    height: 100vh; 
+}
 /* End Login Pop up */
 
 /* Dashboard CSS*/
@@ -522,14 +517,6 @@ label[for=secondroll] {
 .in-play header p{
     color: white;
 }
-.dashboard-background{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top:0;
-    left: 0;
-}
 .user-info .user-name {
     position: absolute;
     top: 50%;
@@ -539,6 +526,7 @@ label[for=secondroll] {
 }
 
 .bot-container {
+    background: url('../image/dashboard-background.jpg') center;
     left:20%;
     width: 80%;
     position: absolute;
