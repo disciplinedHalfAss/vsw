@@ -10,6 +10,8 @@ $(function(){
 
 	});
 
+	
+
 });
 
 $(document).mouseup(function(e){
@@ -18,6 +20,10 @@ $(document).mouseup(function(e){
   	$('.form1').hide();
   }
 });
+
+$('#start-button').on('click',function(){
+		$('.form1').show();
+	});
 
 $('.register-btn').on('click',function(event){
 	if($('#register-name-input').val()==""){

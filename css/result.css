@@ -1,0 +1,78 @@
+.top-container{
+	width: 100%;
+	height: 70%;
+	background-color: grey;
+
+
+}
+
+#top-logo{
+	height: 35px;
+	width: 100px;
+	margin-top: 30px;
+}
+
+#result-logout{
+	margin-top: 40px;
+	
+}
+
+#result-logout li a{
+	color: black;
+}
+
+.top-section h2{
+	text-align: center;
+	margin-top: 5%;
+}
+
+.creator{
+	text-align: center;
+}
+
+.creator2{
+	text-align: center;
+	margin-top: 8%;
+}
+
+.result-container{
+	margin-top: 25%;
+	left: 50%;
+    margin-left: -40%;
+    width: 80%;
+    border: 0 solid #fff;
+    box-shadow: 2px 2px 5px #888;
+}
+
+#vs-img{
+	z-index: 999;
+	position: relative;
+}
+#vs-img img{
+    height: 180px;
+    margin-top: 30%;
+    margin-left: 43.5%;
+}
+
+#yes .left{
+	display: inline-block;
+
+}
+
+#yes .right{
+	display: inline-block;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

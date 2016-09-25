@@ -190,7 +190,7 @@ body {
 
 .side.front img{
     width:70%;
-    margin: 60px 15%;
+    margin: 40px 15%;
 }
 
 #d-wrapper {
@@ -218,11 +218,11 @@ body {
 }
 .side {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: #CC0E0E;
-    box-shadow:inset 0 0 40px #ccc;
-    border-radius: 60px;
+    box-shadow:inset 0 0 30px #ccc;
+    border-radius: 45px;
 }
 #dice .cover, #dice .inner {
     background: #DF3F3F;
@@ -239,69 +239,70 @@ body {
     transform: rotateX(90deg);
 }
 #dice .front  {
-    transform: translateZ(100px);
+    transform: translateZ(75px);
 }
 #dice .front.inner  {
-    transform: translateZ(98px);
+    transform: translateZ(73.5px);
 }
 #dice .back {
-    transform: rotateX(-180deg) translateZ(100px);
+    transform: rotateX(-180deg) translateZ(75px);
 }
 #dice .back.inner {
-    transform: rotateX(-180deg) translateZ(98px);
+    transform: rotateX(-180deg) translateZ(73.5px);
 }
 #dice .right {
-    transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) translateZ(75px);
 }
 #dice .right.inner {
-    transform: rotateY(90deg) translateZ(98px);
+    transform: rotateY(90deg) translateZ(73.5px);
 }
 #dice .left {
-    transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(75px);
 }
 #dice .left.inner {
-    transform: rotateY(-90deg) translateZ(98px);
+    transform: rotateY(-90deg) translateZ(73.5px);
 }
 #dice .top {
-    transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(75px);
 }
 #dice .top.inner {
-    transform: rotateX(90deg) translateZ(98px);
+    transform: rotateX(90deg) translateZ(73.5px);
 }
 #dice .bottom {
-    transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(75px);
 }
 #dice .bottom.inner {
-    transform: rotateX(-90deg) translateZ(98px);
+    transform: rotateX(-90deg) translateZ(73.5px);
 }
+
 .dot {
     position:absolute;
-    width:46px;
-    height:46px;
-    border-radius:23px;
+    width:34.5px;
+    height:34.5px;
+    border-radius:17.25px;
     background:#FFF;
-    box-shadow:inset 5px 0 10px #000;
+    box-shadow:inset 3.75px 0 7.5px #000;
 }
 .dot.center {
-    margin:77px 0 0 77px;
+    margin:57.75px 0 0 57.75px;
 }
 .dot.dtop {
-    margin-top:20px;
+    margin-top:15px;
 }
 .dot.dleft {
-    margin-left:134px;
+    margin-left:100.5px;
 }
 .dot.dright {
-    margin-left:20px;
+    margin-left:15px;
 }
 .dot.dbottom {
-    margin-top:134px;
+    margin-top:100.5px;
 }
 .dot.center.dleft {
-    margin:77px 0 0 20px;
+    margin:57.75px 0 0 15px;
 }
 .dot.center.dright {
-    margin:77px 0 0 134px;
+    margin:57.75px 0 0 100.5px;
 }
 
 #background {
@@ -980,7 +981,7 @@ a:hover {
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   position: absolute;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -178px;
   z-index: 20;
 }
 
