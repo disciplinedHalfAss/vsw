@@ -55,18 +55,19 @@
 }
 
 #yes .left{
-	display: inline-block;
+	float: left;
 
 }
 
 #yes .right{
-	display: inline-block;
+	float: right;
 
 }
 
 
-
-
+.bot-section{
+	margin-top: 190px;
+}
 
 
 
